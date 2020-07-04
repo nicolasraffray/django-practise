@@ -6,3 +6,6 @@ from django.http import HttpResponse
 # Function for handling certain routes
 def home(request):
   return HttpResponse('<h1> Home! </h1>')
+
+def about(request):
+  return HttpResponse('<h1> About Page </h1>')
