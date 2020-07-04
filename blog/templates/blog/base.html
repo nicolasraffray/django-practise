@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +15,9 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+
+    <link rel='stylesheet' type='text/css' href="{% static 'blog/main.css'%}">
+
     {% if title %}
     <title>Django Blog - {{title}}</title>
     {% else %}
