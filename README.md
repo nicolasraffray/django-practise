@@ -35,5 +35,17 @@ python manage.py makemigrations
 If you want to see the sql of the migrations type something like the following
 
 ```unix
-python manage.py sqlmigrate blog 00001
+python manage.py sqlmigrate blog 0001
+```
+
+and it will return something that looks like this:
+
+```unix
+BEGIN;
+--
+-- Create model Post
+--
+CREATE TABLE "blog_post" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(100) NOT NULL, "content" text NOT NULL, "date_posted" datetime NOT NULL, "author_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED);
+CREATE INDEX "blog_post_author_id_dd7a8485" ON "blog_post" ("author_id");
+COMMIT;
 ```
