@@ -88,7 +88,7 @@ user = User.objects.get(id = 1)
 # --- # 
 
 # Createing a new post
-post_1 = Post(title='blog1', content='first post content', author=user)
+post_1 = Post(title='blog1', content='first post content', author=user) # alternatively you can run author_id = user.id
 
 # This will have created a new post but it has not been saved to database.
 
@@ -96,6 +96,12 @@ post_1.save()
 
 Post.objects.all() # You will see the post has now been saved.
 
+# --- #
 
+# Getting all posts by a specific user with query set
+user.post_set.all
+
+# Posts can also be created in this fashion
+user.post_set.create(title="new post", content="yet another post") # don't need author bc Django knows from user.post_set. You dont need to save either is saved automatially.
 
 ```
