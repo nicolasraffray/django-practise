@@ -57,3 +57,45 @@ python manage.py migrate
 ```
 
 You should get an OK status if it is ok
+
+### Querying the database using the ORM models
+
+we can query the database using the django ORM. The django-python shell will let us work with these models interactively.
+
+```unix
+python manage.py shell
+```
+
+Then in python
+
+```python
+from blog.models import Post
+from django.contrib.auth.models import User
+
+# Get all users
+User.objects.all()
+# Get first user
+User.objects.first
+# Filter
+user = User.objects.filter(username == 'nic')
+
+# Look at attributes
+user.pk # primary key
+
+# Getting users
+user = User.objects.get(id = 1)
+
+# --- # 
+
+# Createing a new post
+post_1 = Post(title='blog1', content='first post content', author=user)
+
+# This will have created a new post but it has not been saved to database.
+
+post_1.save()
+
+Post.objects.all() # You will see the post has now been saved.
+
+
+
+```
