@@ -99,9 +99,9 @@ Post.objects.all() # You will see the post has now been saved.
 # --- #
 
 # Getting all posts by a specific user with query set
-user[0].post_set.all()
+user.post_set.all()
 
 # Posts can also be created in this fashion
-user[0].post_set.create(title="new post", content="yet another post") # don't need author bc Django knows from user.post_set. You dont need to save either is saved automatially
+user.post_set.create(title="new post", content="yet another post") # don't need author bc Django knows from user.post_set. You dont need to save either is saved automatially
 
 ```
