@@ -1,23 +1,6 @@
 from django.shortcuts import render
 from .models import Post
 
-# Posts
-
-posts = [ 
-  {
-    'author' : 'Nic',
-    'title' : 'Blog Post 1',
-    'content' : 'first post content',
-    'date': '4 July, 2020'
-  },
-  {
-    'author' : 'Jane',
-    'title' : 'Blog Post 2',
-    'content' : 'second post content',
-    'date': '5 July, 2020'
-  }
-]
-
 # Create your views here.
 
 # Function for handling certain routes
