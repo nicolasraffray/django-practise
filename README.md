@@ -25,3 +25,15 @@ python manage.py createsuperuser
 Django has its own ORM! It will let us represent the database structure as classes, or models.
 
 Each class is its own table in the database and the attributes are different fields in the database.
+
+Once a new model is created the migrations need to be made
+
+```unix
+python manage.py makemigrations
+```
+
+If you want to see the sql of the migrations type something like the following
+
+```unix
+python manage.py sqlmigrate blog 00001
+```
