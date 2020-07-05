@@ -75,9 +75,9 @@ from django.contrib.auth.models import User
 # Get all users
 User.objects.all()
 # Get first user
-User.objects.first
+User.objects.first()
 # Filter
-user = User.objects.filter(username == 'nic')
+user = User.objects.filter(username = 'nic')
 
 # Look at attributes
 user.pk # primary key
@@ -99,9 +99,9 @@ Post.objects.all() # You will see the post has now been saved.
 # --- #
 
 # Getting all posts by a specific user with query set
-user.post_set.all
+user[0].post_set.all()
 
 # Posts can also be created in this fashion
-user.post_set.create(title="new post", content="yet another post") # don't need author bc Django knows from user.post_set. You dont need to save either is saved automatially.
+user[0].post_set.create(title="new post", content="yet another post") # don't need author bc Django knows from user.post_set. You dont need to save either is saved automatially
 
 ```
