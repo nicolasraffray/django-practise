@@ -49,3 +49,11 @@ CREATE TABLE "blog_post" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "titl
 CREATE INDEX "blog_post_author_id_dd7a8485" ON "blog_post" ("author_id");
 COMMIT;
 ```
+
+You then want to run the migration to actually change the database.
+
+```unix
+python manage.py migrate
+```
+
+You should get an OK status if it is ok
