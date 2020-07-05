@@ -19,3 +19,9 @@ python manage.py createsuperuser
 ```
 
 3. Fill in the superuser credentials.
+
+## Database in Django
+
+Django has its own ORM! It will let us represent the database structure as classes, or models.
+
+Each class is its own table in the database and the attributes are different fields in the database.
