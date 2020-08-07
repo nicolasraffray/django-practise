@@ -105,3 +105,9 @@ user.post_set.all()
 user.post_set.create(title="new post", content="yet another post") # don't need author bc Django knows from user.post_set. You dont need to save either is saved automatially
 
 ```
+
+run mygrations
+
+```unix
+python manage.py makemigrations
+```
